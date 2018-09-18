@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFTPClient", "TestFTPClient\TestFTPClient.csproj", "{B840E7BA-D436-4E3F-942E-1A9AD6650E98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPClient", "FTPClient\FTPClient.csproj", "{ABBA8C38-268D-4CA9-ACE2-FD3871D36C21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B840E7BA-D436-4E3F-942E-1A9AD6650E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B840E7BA-D436-4E3F-942E-1A9AD6650E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B840E7BA-D436-4E3F-942E-1A9AD6650E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B840E7BA-D436-4E3F-942E-1A9AD6650E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABBA8C38-268D-4CA9-ACE2-FD3871D36C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBA8C38-268D-4CA9-ACE2-FD3871D36C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBA8C38-268D-4CA9-ACE2-FD3871D36C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBA8C38-268D-4CA9-ACE2-FD3871D36C21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4219B026-2888-40BC-8FE1-7B6B3FA8ED77}
+	EndGlobalSection
+EndGlobal
