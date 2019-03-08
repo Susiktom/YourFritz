@@ -1,8 +1,9 @@
 #! /bin/bash
 [ -z "$TARGET_BRANDING" ] && printf "TARGET_BRANDING value is not set.\a\n" 1>&2 && exit 1
 [ -z "$TARGET_SYSTEM_VERSION" ] && printf "TARGET_SYSTEM_VERSION value is not set.\a\n" 1>&2 && exit 1
-JsFile=usr/www/$TARGET_BRANDING/system/reboot.js
-LuaFile=usr/www/$TARGET_BRANDING/system/reboot.lua
+TargetDir="${TARGET_DIR:+$TARGET_DIR/}"
+JsFile="usr/www/$TARGET_BRANDING/system/reboot.js"
+LuaFile="usr/www/$TARGET_BRANDING/system/reboot.lua"
 check_version()
 {
 	local major=$(expr "$1" : "0*\([1-9]*[0-9]\)")
@@ -128,16 +129,16 @@ EndOfPatch
 major=$(( $(expr "$TARGET_SYSTEM_VERSION" : "[0-9]*\.0*\([1-9]*[0-9]\)\.[0-9]*") + 0 ))
 minor=$(( $(expr "$TARGET_SYSTEM_VERSION" : "[0-9]*\.[0-9]*\.0*\([1-9]*[0-9]\)") + 0 ))
 if check_version $major $minor 7 8; then
-	printf "Patching file '%s' ...\n" "$LuaFile" 1>&2
+	printf "      Patching file '%s' ...\n" "$LuaFile" 1>&2
 	getLuaPatchText_pre0708 > "$TMP/gui_bootmanager_0_6_tmp"
-	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$LuaFile"
+	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$TargetDir$LuaFile"
 	rm "$TMP/gui_bootmanager_0_6_tmp"
 else
-	printf "Patching file '%s' ...\n" "$JsFile" 1>&2
+	printf "      Patching file '%s' ...\n" "$JsFile" 1>&2
 	getJsPatchText_0708 > $TMP/gui_bootmanager_0_6_tmp
-	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$JsFile"
-	printf "Patching file '%s' ...\n" "$LuaFile" 1>&2
+	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$TargetDir$JsFile"
+	printf "      Patching file '%s' ...\n" "$LuaFile" 1>&2
 	getLuaPatchText_0708 > $TMP/gui_bootmanager_0_6_tmp
-	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$LuaFile"
+	sed -f "$TMP/gui_bootmanager_0_6_tmp" -i "$TargetDir$LuaFile"
 	rm "$TMP/gui_bootmanager_0_6_tmp"
 fi
