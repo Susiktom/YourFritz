@@ -16,7 +16,7 @@ check_version()
 	[ $minor -lt $wanted_minor ] && return 0
 	return 1
 }
-function getJsPatchText_0708()
+getJsPatchText_0708()
 {
 cat <<'EndOfPatch'
 /^TableCalls/i \
@@ -26,7 +26,7 @@ function buildBootmanager(data){function gv(src,id){var r=src.filter(function(e)
 if(data.bootmanager){html2.add(content,buildBootmanager(data.bootmanager));}
 EndOfPatch
 }
-function getLuaPatchText_0708()
+getLuaPatchText_0708()
 {
 cat <<'EndOfPatch'
 /^local function data_actions()/i \
@@ -105,7 +105,7 @@ os.execute("/usr/bin/gui_bootmanager switch_to '"..linux_fs_start.."' '"..brandi
 end
 EndOfPatch
 }
-function getLuaPatchText_pre0708()
+getLuaPatchText_pre0708()
 {
 cat <<'EndOfPatch'
 /^local savecookie = {}/a \
